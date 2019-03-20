@@ -21,7 +21,7 @@ object FConversaoTexto: TFConversaoTexto
     Align = alLeft
     Caption = 'Texto Original'
     TabOrder = 0
-    object Memo1: TMemo
+    object mmTextoOriginal: TMemo
       Left = 2
       Top = 15
       Width = 285
@@ -52,14 +52,16 @@ object FConversaoTexto: TFConversaoTexto
       Align = alBottom
       Caption = 'Converter'
       TabOrder = 0
+      OnClick = btnConverterClick
     end
-    object RadioGroup1: TRadioGroup
+    object rgTipoConversao: TRadioGroup
       Left = 40
       Top = 40
       Width = 249
       Height = 209
       Anchors = [akLeft, akTop, akRight, akBottom]
       Caption = 'Op'#231#245'es de Convers'#227'o'
+      ItemIndex = 0
       Items.Strings = (
         'Invertido'
         'Primeira mai'#250'scula'
@@ -76,7 +78,7 @@ object FConversaoTexto: TFConversaoTexto
     Caption = 'Texto Convertido'
     TabOrder = 2
     ExplicitLeft = 619
-    object Memo2: TMemo
+    object mmTextoConvertido: TMemo
       Left = 2
       Top = 15
       Width = 285

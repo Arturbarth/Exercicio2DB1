@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{451E10EE-B885-47D7-8FC1-5636DFBE62F2}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="prjConversao.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Test\prjConversaoTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="prjConversao">
+        <MSBuild Projects="prjConversao.dproj"/>
+    </Target>
+    <Target Name="prjConversao:Clean">
+        <MSBuild Projects="prjConversao.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="prjConversao:Make">
+        <MSBuild Projects="prjConversao.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="prjConversaoTests">
+        <MSBuild Projects="Test\prjConversaoTests.dproj"/>
+    </Target>
+    <Target Name="prjConversaoTests:Clean">
+        <MSBuild Projects="Test\prjConversaoTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="prjConversaoTests:Make">
+        <MSBuild Projects="Test\prjConversaoTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="prjConversao;prjConversaoTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="prjConversao:Clean;prjConversaoTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="prjConversao:Make;prjConversaoTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

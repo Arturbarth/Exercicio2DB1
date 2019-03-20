@@ -3,7 +3,8 @@ program prjConversao;
 uses
   Vcl.Forms,
   uConversaoTexto in 'uConversaoTexto.pas' {FConversaoTexto},
-  uConversao in 'uConversao.pas';
+  uConversao in 'uConversao.pas',
+  uFactoryConversao in 'uFactoryConversao.pas';
 
 {$R *.res}
 
